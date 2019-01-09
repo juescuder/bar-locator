@@ -1,0 +1,14 @@
+<div id="sidebar" class="split left scrollbar">
+		<h3>Night Out!</h3>
+		<ul>
+			<li *ngFor="let bar of barsList$" (click)="selectBar(bar.id)" [class.selected]="bar.id == barSelected$.id">
+				<br/>
+				<span>{{bar.name}}</span>
+				<div class="item-content">
+					<p>{{bar.address}}</p>
+					<img src="../../assets/1.jpg">
+					<div style="clear: both;"></div>
+				</div>
+			</li>
+		</ul>
+	</div>

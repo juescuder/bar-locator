@@ -1,0 +1,9 @@
+p {
+    font-family: Lato;
+}
+  
+agm-map {
+    min-height: 400px;
+    min-width: 400px;
+    height: 100%;
+}

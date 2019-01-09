@@ -1,0 +1,3 @@
+<agm-map [zoom]="15" [latitude]="bars.barSelected$.location.latitude" [longitude]="bars.barSelected$.location.longitude">
+  <agm-marker *ngFor="let bar of bars.barsList$" [latitude]="bar.location.latitude" [longitude]="bar.location.longitude" iconUrl="../../assets/icon.png"></agm-marker>
+</agm-map>
