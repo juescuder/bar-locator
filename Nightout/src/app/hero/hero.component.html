@@ -16,9 +16,9 @@
     </div>
     <div class="row">
       <div class="col-lg-10 offset-lg-1">
-        <a class="section-btn" routerLink="nearest-bars"><i class="material-icons">local_bar</i><br/><strong>Bares</strong><br/> más cercanos</a>
-        <a class="section-btn"><i class="material-icons">local_dining</i><br/><strong>Restaurantes</strong><br/> más cercanos</a>
-        <a class="section-btn"><i class="material-icons">local_play</i><br/><strong>Boliches</strong><br/> más cercanos</a>
+        <a class="section-btn" [routerLink]="['nearest', { 'type': 'Bars'}]"><i class="material-icons">local_bar</i><br/><strong>Bares</strong><br/> más cercanos</a>
+        <a class="section-btn" [routerLink]="['nearest', { 'type': 'Restos'}]"><i class="material-icons">local_dining</i><br/><strong>Restaurantes</strong><br/> más cercanos</a>
+        <a class="section-btn" [routerLink]="['nearest', { 'type': 'Clubs'}]"><i class="material-icons">local_play</i><br/><strong>Boliches</strong><br/> más cercanos</a>
         <a class="section-btn"><i class="material-icons">zoom_out_map</i><br/><strong>Todos</strong><br/> los lugares</a>
         <!-- <a class="section-btn"><strong>Ver todos los lugares</strong></a> -->
       </div>

@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { SidebarComponent } from '../sidebar/sidebar.component';
-import { BarsService } from '../bars.service';
 
 @Component({
   selector: 'app-map',
@@ -9,13 +8,11 @@ import { BarsService } from '../bars.service';
 })
 export class MapComponent implements OnInit {
 
-  @Input() bars: SidebarComponent;
+  @Input() places: SidebarComponent;
 
-  constructor(private data: BarsService) {}
+  constructor() {}
   
   ngOnInit() {
-
-    console.log(this.bars.barSelected$);
   }
 
 }

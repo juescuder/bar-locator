@@ -6,13 +6,33 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class BarsService {
+export class PlaceService {
 
   ref = firebase.firestore().collection('Bars');
 
   constructor() { }
+  
+  getPlace(type: string, id: string): Observable<any> {
 
-  getBars(): Observable<any> {
+    this.ref = firebase.firestore().collection(type);
+
+    return new Observable((observer) => {
+      this.ref.doc(id).get().then((doc) => {
+        let data = doc.data();
+        console.log(data);
+        observer.next({
+          id: doc.id,
+          name: data.Name,
+          location: data.Location
+        });
+      });
+    });
+  }
+
+  getPlacesList(type: string): Observable<any> {
+
+    this.ref = firebase.firestore().collection(type);
+
     return new Observable((observer) => {
       this.ref.onSnapshot((querySnapshot) => {
         let bars = [];
@@ -29,19 +49,6 @@ export class BarsService {
       });
     });
   }
-  
-  getBar(id: string): Observable<any> {
-    return new Observable((observer) => {
-      this.ref.doc(id).get().then((doc) => {
-        let data = doc.data();
-        console.log(data);
-        observer.next({
-          id: doc.id,
-          name: data.Name,
-          location: data.Location
-        });
-      });
-    });
-  }
+
 
 }

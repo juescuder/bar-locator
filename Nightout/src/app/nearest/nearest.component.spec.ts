@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NearestBarsComponent } from './nearest-bars.component';
+import { NearestComponent } from './nearest.component';
 
 describe('NearestBarsComponent', () => {
-  let component: NearestBarsComponent;
-  let fixture: ComponentFixture<NearestBarsComponent>;
+  let component: NearestComponent;
+  let fixture: ComponentFixture<NearestComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NearestBarsComponent ]
+      declarations: [ NearestComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NearestBarsComponent);
+    fixture = TestBed.createComponent(NearestComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

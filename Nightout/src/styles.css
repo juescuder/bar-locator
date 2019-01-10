@@ -196,6 +196,7 @@ ol {
 	text-align: center;
 	border: none;
 	margin-top: 10px;
+	margin-right: 10px;
 	padding: 40px 30px;
 	font-weight: 600;
 	font-size: 16px;
@@ -342,7 +343,7 @@ ol {
 
 .intro-newslatter input[type=text] {
 	height: 53px;
-	width: 70%;
+	width: 73%;
 	padding: 0 30px;
 	margin-right: 22px;
 	float: left;
@@ -362,7 +363,7 @@ ol {
 
 
 .intro-newslatter .site-btn {
-	min-width: 203px;
+	min-width: 217px;
 }
 
 /*------------------

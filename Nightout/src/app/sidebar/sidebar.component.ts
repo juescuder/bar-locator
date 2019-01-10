@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { BarsService } from '../bars.service';
+import { Routes, RouterModule, ActivatedRoute } from '@angular/router';
+import { PlaceService } from '../place.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -8,24 +9,34 @@ import { BarsService } from '../bars.service';
 })
 export class SidebarComponent implements OnInit {
 
-  barsList$: Object;  
-  barSelected$: Object;
+  placesList$: Object;  
+  selected$: Object;
+  type$: string;
 
-  constructor(private data: BarsService) { }
-
-  ngOnInit() {
-    this.data.getBars().subscribe(
-      data => {
-        this.barsList$ = data;
-        this.barSelected$ = data[0];
-      }
-    )
+  constructor(private data: PlaceService, private activatedRoute: ActivatedRoute) { 
+    
   }
 
-  selectBar(barId: string){
-    console.log(barId);
-    this.data.getBar(barId).subscribe(
-      data => this.barSelected$ = data
+  ngOnInit() {
+
+    this.activatedRoute.params.subscribe(params => {
+      this.type$ = params['type'];
+
+      this.data.getPlacesList(this.type$).subscribe(
+        data => {
+          this.placesList$ = data;
+          this.selected$ = data[0];
+        }
+      )
+
+
+   });
+  }
+
+  selectBar(placeId: string){
+    console.log(placeId, this.type$);
+    this.data.getPlace(this.type$, placeId).subscribe(
+      data => this.selected$ = data
     )
 
   }

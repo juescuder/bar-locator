@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { BarsService } from './bars.service';
+import { PlaceService } from './place.service';
 
 describe('BarsService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: BarsService = TestBed.get(BarsService);
+    const service: PlaceService = TestBed.get(PlaceService);
     expect(service).toBeTruthy();
   });
 });

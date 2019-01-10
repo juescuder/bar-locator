@@ -8,7 +8,7 @@ import { HeaderComponent } from './header/header.component';
 import { HeroComponent } from './hero/hero.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
-import { NearestBarsComponent } from './nearest-bars/nearest-bars.component';
+import { NearestComponent } from './nearest/nearest.component';
 import { MapComponent } from './map/map.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 
@@ -19,7 +19,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     HeroComponent,
     FooterComponent,
     HomeComponent,
-    NearestBarsComponent,
+    NearestComponent,
     MapComponent,
     SidebarComponent
   ],

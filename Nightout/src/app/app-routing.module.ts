@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
-import { NearestBarsComponent } from './nearest-bars/nearest-bars.component';
+import { NearestComponent } from './nearest/nearest.component';
 import { MapComponent } from './map/map.component';
 
 const routes: Routes = [
@@ -10,8 +10,8 @@ const routes: Routes = [
     component: HomeComponent
   },
   {
-    path: 'nearest-bars',
-    component: NearestBarsComponent
+    path: 'nearest',
+    component: NearestComponent
   }
 ];
 
