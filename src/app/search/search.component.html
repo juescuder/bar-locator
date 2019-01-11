@@ -1,0 +1,11 @@
+<input #searchInput type="text" placeholder="Nombre o palabra clave..." (keyup)="search(searchInput.value)">
+<button class="site-btn">Buscar</button>
+<div *ngIf="results$ != null">
+  <ul class="filter-select">
+    <li class="filter-select-list" *ngFor="let result of results$">
+        <a [routerLink]="['single', result.id]">{{result.name}}
+          <span>{{result.address}}</span>
+        </a>
+    </li>
+  </ul>
+</div>

@@ -2,7 +2,13 @@ p {
     font-family: Lato;
 }
   
-agm-map {
+#mapPlaces {
+    min-height: 400px;
+    min-width: 400px;
+    height: 100%;
+}
+
+#mapSingle {
     min-height: 400px;
     min-width: 400px;
     height: 100%;

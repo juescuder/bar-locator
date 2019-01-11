@@ -1,3 +1,8 @@
-<agm-map *ngIf="places.selected$ != null" [zoom]="15" [latitude]="places.selected$.location.latitude" [longitude]="places.selected$.location.longitude">
+<agm-map id="mapPlaces" *ngIf="places != null && places.selected$ != null" [zoom]="15" [latitude]="places.selected$.location.latitude" [longitude]="places.selected$.location.longitude">
   <agm-marker *ngFor="let place of places.placesList$" [latitude]="place.location.latitude" [longitude]="place.location.longitude" iconUrl="../../assets/icon.png"></agm-marker>
 </agm-map>
+
+<agm-map id="mapSingle" *ngIf="place != null && place.place$ != null" [zoom]="18" [latitude]="place.place$.location.latitude" [longitude]="place.place$.location.longitude">
+    <agm-marker [latitude]="place.place$.location.latitude" [longitude]="place.place$.location.longitude" iconUrl="../../assets/icon.png"></agm-marker>
+  </agm-map> 
+

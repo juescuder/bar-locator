@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { NearestComponent } from './nearest/nearest.component';
 import { MapComponent } from './map/map.component';
+import { SingleComponent } from './single/single.component';
 
 const routes: Routes = [
   {
@@ -12,6 +13,10 @@ const routes: Routes = [
   {
     path: 'nearest',
     component: NearestComponent
+  },
+  {
+    path: 'single/:id',
+    component: SingleComponent
   }
 ];
 

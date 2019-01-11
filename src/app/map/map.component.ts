@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { SidebarComponent } from '../sidebar/sidebar.component';
+import { PlaceComponent } from '../place/place.component';
 
 @Component({
   selector: 'app-map',
@@ -9,6 +10,7 @@ import { SidebarComponent } from '../sidebar/sidebar.component';
 export class MapComponent implements OnInit {
 
   @Input() places: SidebarComponent;
+  @Input() place: PlaceComponent;
 
   constructor() {}
   

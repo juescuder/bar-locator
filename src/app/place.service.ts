@@ -23,7 +23,8 @@ export class PlaceService {
         observer.next({
           id: doc.id,
           name: data.Name,
-          location: data.Location
+          location: data.Location,
+          address: data.Address
         });
       });
     });
@@ -44,6 +45,40 @@ export class PlaceService {
             location: data.Location,
             address: data.Address
           });
+        });
+        observer.next(bars);
+      });
+    });
+  }
+
+  getPlacesByKeyword(type: string, keyword: string): Observable<any> {
+
+    this.ref = firebase.firestore().collection(type);
+
+    /*.orderByChild('_searchLastName')
+                 .startAt(keyword)
+                 .endAt(keyword+"\uf8ff")*/
+
+    //this.ref.orderBy('Name').startAt(keyword).endAt(keyword+"\uf8ff").onSnapshot(querySnapshot) => {
+    //this.ref.onSnapshot((querySnapshot) => {
+
+    return new Observable((observer) => {
+      this.ref.onSnapshot((querySnapshot) => {
+        let bars = [];
+        querySnapshot.forEach((doc) => {
+          let data = doc.data();
+
+          console.log(data.Name.toLowerCase() + ' <=> ' + keyword);
+
+          if(data.Name.toLowerCase().includes(keyword.toLowerCase()))
+          {
+            bars.push({
+              id: doc.id,
+              name: data.Name,
+              location: data.Location,
+              address: data.Address
+            });
+          }
         });
         observer.next(bars);
       });

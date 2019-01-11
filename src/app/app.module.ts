@@ -11,6 +11,9 @@ import { HomeComponent } from './home/home.component';
 import { NearestComponent } from './nearest/nearest.component';
 import { MapComponent } from './map/map.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { PlaceComponent } from './place/place.component';
+import { SingleComponent } from './single/single.component';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,10 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     HomeComponent,
     NearestComponent,
     MapComponent,
-    SidebarComponent
+    SidebarComponent,
+    PlaceComponent,
+    SingleComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
